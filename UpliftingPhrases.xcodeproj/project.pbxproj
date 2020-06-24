@@ -15,6 +15,10 @@
 		53418C8C24A3FFCC00C0D43B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418C6124A3FFCA00C0D43B /* ContentView.swift */; };
 		53418C8D24A3FFCC00C0D43B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53418C6224A3FFCB00C0D43B /* Assets.xcassets */; };
 		53418C8E24A3FFCC00C0D43B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53418C6224A3FFCB00C0D43B /* Assets.xcassets */; };
+		53418C9F24A4105500C0D43B /* Phrases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418C9E24A4105500C0D43B /* Phrases.swift */; };
+		53418CA024A4105500C0D43B /* Phrases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418C9E24A4105500C0D43B /* Phrases.swift */; };
+		53418CA524A4128D00C0D43B /* BannerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA424A4128D00C0D43B /* BannerImage.swift */; };
+		53418CA624A4128D00C0D43B /* BannerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA424A4128D00C0D43B /* BannerImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,8 @@
 		53418C8624A3FFCC00C0D43B /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		53418C8824A3FFCC00C0D43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53418C9D24A400B600C0D43B /* UpliftingPhrases.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UpliftingPhrases.entitlements; sourceTree = "<group>"; };
+		53418C9E24A4105500C0D43B /* Phrases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrases.swift; sourceTree = "<group>"; };
+		53418CA424A4128D00C0D43B /* BannerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,8 @@
 				53418C6024A3FFCA00C0D43B /* UpliftingPhrasesApp.swift */,
 				53418C6124A3FFCA00C0D43B /* ContentView.swift */,
 				53418C6224A3FFCB00C0D43B /* Assets.xcassets */,
+				53418CA424A4128D00C0D43B /* BannerImage.swift */,
+				53418C9E24A4105500C0D43B /* Phrases.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -310,6 +318,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53418C9F24A4105500C0D43B /* Phrases.swift in Sources */,
+				53418CA524A4128D00C0D43B /* BannerImage.swift in Sources */,
 				53418C8B24A3FFCC00C0D43B /* ContentView.swift in Sources */,
 				53418C8924A3FFCC00C0D43B /* UpliftingPhrasesApp.swift in Sources */,
 			);
@@ -319,6 +329,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53418CA024A4105500C0D43B /* Phrases.swift in Sources */,
+				53418CA624A4128D00C0D43B /* BannerImage.swift in Sources */,
 				53418C8C24A3FFCC00C0D43B /* ContentView.swift in Sources */,
 				53418C8A24A3FFCC00C0D43B /* UpliftingPhrasesApp.swift in Sources */,
 			);
