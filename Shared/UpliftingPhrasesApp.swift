@@ -15,3 +15,9 @@ struct UpliftingPhrasesApp: App {
         }
     }
 }
+
+struct UpliftingPhrasesApp_Previews: PreviewProvider {
+    static var previews: some View {
+        Text("Turtle Rock")
+    }
+}
