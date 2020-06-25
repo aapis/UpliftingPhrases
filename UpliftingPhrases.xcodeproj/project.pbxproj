@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		530F020F24A45B3F00A4A82B /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530F020E24A45B3F00A4A82B /* QuoteView.swift */; };
+		530F021024A45B3F00A4A82B /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530F020E24A45B3F00A4A82B /* QuoteView.swift */; };
 		53418C7C24A3FFCC00C0D43B /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418C7B24A3FFCC00C0D43B /* Tests_iOS.swift */; };
 		53418C8724A3FFCC00C0D43B /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418C8624A3FFCC00C0D43B /* Tests_macOS.swift */; };
 		53418C8924A3FFCC00C0D43B /* UpliftingPhrasesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418C6024A3FFCA00C0D43B /* UpliftingPhrasesApp.swift */; };
@@ -17,8 +19,8 @@
 		53418C8E24A3FFCC00C0D43B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53418C6224A3FFCB00C0D43B /* Assets.xcassets */; };
 		53418C9F24A4105500C0D43B /* Phrases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418C9E24A4105500C0D43B /* Phrases.swift */; };
 		53418CA024A4105500C0D43B /* Phrases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418C9E24A4105500C0D43B /* Phrases.swift */; };
-		53418CA524A4128D00C0D43B /* BannerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA424A4128D00C0D43B /* BannerImage.swift */; };
-		53418CA624A4128D00C0D43B /* BannerImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA424A4128D00C0D43B /* BannerImage.swift */; };
+		53418CA524A4128D00C0D43B /* BannerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA424A4128D00C0D43B /* BannerImageView.swift */; };
+		53418CA624A4128D00C0D43B /* BannerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA424A4128D00C0D43B /* BannerImageView.swift */; };
 		53418CA824A4301400C0D43B /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA724A4301400C0D43B /* AuthorView.swift */; };
 		53418CA924A4301400C0D43B /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA724A4301400C0D43B /* AuthorView.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		530F020E24A45B3F00A4A82B /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		53418C6024A3FFCA00C0D43B /* UpliftingPhrasesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpliftingPhrasesApp.swift; sourceTree = "<group>"; };
 		53418C6124A3FFCA00C0D43B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		53418C6224A3FFCB00C0D43B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +60,7 @@
 		53418C8824A3FFCC00C0D43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53418C9D24A400B600C0D43B /* UpliftingPhrases.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UpliftingPhrases.entitlements; sourceTree = "<group>"; };
 		53418C9E24A4105500C0D43B /* Phrases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrases.swift; sourceTree = "<group>"; };
-		53418CA424A4128D00C0D43B /* BannerImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImage.swift; sourceTree = "<group>"; };
+		53418CA424A4128D00C0D43B /* BannerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageView.swift; sourceTree = "<group>"; };
 		53418CA724A4301400C0D43B /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,9 +113,10 @@
 			children = (
 				53418C6024A3FFCA00C0D43B /* UpliftingPhrasesApp.swift */,
 				53418C6124A3FFCA00C0D43B /* ContentView.swift */,
+				530F020E24A45B3F00A4A82B /* QuoteView.swift */,
 				53418CA724A4301400C0D43B /* AuthorView.swift */,
 				53418C6224A3FFCB00C0D43B /* Assets.xcassets */,
-				53418CA424A4128D00C0D43B /* BannerImage.swift */,
+				53418CA424A4128D00C0D43B /* BannerImageView.swift */,
 				53418C9E24A4105500C0D43B /* Phrases.swift */,
 			);
 			path = Shared;
@@ -323,8 +327,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				53418CA824A4301400C0D43B /* AuthorView.swift in Sources */,
+				530F020F24A45B3F00A4A82B /* QuoteView.swift in Sources */,
 				53418C9F24A4105500C0D43B /* Phrases.swift in Sources */,
-				53418CA524A4128D00C0D43B /* BannerImage.swift in Sources */,
+				53418CA524A4128D00C0D43B /* BannerImageView.swift in Sources */,
 				53418C8B24A3FFCC00C0D43B /* ContentView.swift in Sources */,
 				53418C8924A3FFCC00C0D43B /* UpliftingPhrasesApp.swift in Sources */,
 			);
@@ -335,8 +340,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				53418CA924A4301400C0D43B /* AuthorView.swift in Sources */,
+				530F021024A45B3F00A4A82B /* QuoteView.swift in Sources */,
 				53418CA024A4105500C0D43B /* Phrases.swift in Sources */,
-				53418CA624A4128D00C0D43B /* BannerImage.swift in Sources */,
+				53418CA624A4128D00C0D43B /* BannerImageView.swift in Sources */,
 				53418C8C24A3FFCC00C0D43B /* ContentView.swift in Sources */,
 				53418C8A24A3FFCC00C0D43B /* UpliftingPhrasesApp.swift in Sources */,
 			);

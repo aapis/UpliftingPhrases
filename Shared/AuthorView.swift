@@ -8,25 +8,36 @@
 import SwiftUI
 
 struct AuthorView: View {
-    var key: String
+    var authorName: String
     
     var body: some View {
-        Image(self.key)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .clipShape(Circle())
-            .overlay(
-                Circle().stroke(Color.white, lineWidth: 4), alignment: .center)
-            .shadow(radius: 10)
-            .frame(width: 100)
-            .padding()
+        VStack {
+            Image(self.authorName)
+                .resizable()
+                .frame(width: 150, height: 150)
+                .scaledToFit()
+                .clipShape(Circle())
+                .overlay(
+                    Circle().stroke(Color.white, lineWidth: 6), alignment: .center)
+                .shadow(radius: 10)
+                .padding()
+            
+            Text(self.authorName)
+                .font(.title)
+                .foregroundColor(.black)
+        }
     }
 }
 
-#if DEBUG
 struct AuthorView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthorView(key: "Oscar Wilde")
+        VStack {
+            AuthorView(authorName: "Martin Luther King Jr.")
+            AuthorView(authorName: "Maya Angelou")
+            AuthorView(authorName: "Mahatma Gandhi")
+            AuthorView(authorName: "Oscar Wilde")
+            AuthorView(authorName: "Eleanor Roosevelt")
+            AuthorView(authorName: "William W. Purkey")
+        }
     }
 }
-#endif

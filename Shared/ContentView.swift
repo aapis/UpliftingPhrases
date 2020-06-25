@@ -8,51 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var quote: String = phrases.first?.text ?? "Hello, world"
+    @State var quote: String = phrases.first?.text ?? "I can't do that"
     @State var author: String = phrases.first?.author ?? "HAL 9000"
     @State var currentIndex: Int = 0
     
     var body: some View {
         VStack {
-            BannerImage()
-                .frame(height: 300)
-                .offset(y: -60)
-                .padding(.bottom, -100)
+            BannerImageView()
             
-            VStack(alignment: .leading) {
-                HStack {
-                    AuthorView(key: self.author)
-                    
-                    VStack {
-                        HStack {
-                            Text("\"" + quote + "\"")
-                                .font(.subheadline)
-                                .padding()
-                            Spacer()
-                        }
-                        
-                        HStack {
-                            Text("-- " + author)
-                                .font(.subheadline)
-                                .padding()
-                            Spacer()
-                        }
-                    }
-                }
+            AuthorView(authorName: self.author)
+                .offset(y: -160)
+                .padding(.bottom, -130)
+            
+            QuoteView(quote: self.quote)
+            
+            Spacer()
+            
+            HStack {
+                Spacer()
                 
-                VStack {
-                    Spacer()
-                    
-                    HStack {
-                        Spacer()
-                        Button("Inspire Me", action: next)
-                            .padding()
-                            .background(Color.pink)
-                            .foregroundColor(.white)
-                            .cornerRadius(40)
-                        Spacer()
-                    }
-                }
+                Button("Inspire Me", action: next)
+                    .padding()
+                    .background(Color.pink)
+                    .foregroundColor(.white)
+                    .cornerRadius(40)
+                Spacer()
             }
         }
     }
@@ -75,10 +55,8 @@ struct ContentView: View {
     }
 }
 
-#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-#endif

@@ -16,10 +16,8 @@ struct UpliftingPhrasesApp: App {
     }
 }
 
-#if DEBUG
 struct UpliftingPhrasesApp_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-#endif
