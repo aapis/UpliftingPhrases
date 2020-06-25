@@ -44,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		530F020E24A45B3F00A4A82B /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		530F021724A4665300A4A82B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		53418C6024A3FFCA00C0D43B /* UpliftingPhrasesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpliftingPhrasesApp.swift; sourceTree = "<group>"; };
 		53418C6124A3FFCA00C0D43B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		53418C6224A3FFCB00C0D43B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +100,7 @@
 		53418C5A24A3FFCA00C0D43B = {
 			isa = PBXGroup;
 			children = (
+				530F021724A4665300A4A82B /* README.md */,
 				53418C5F24A3FFCA00C0D43B /* Shared */,
 				53418C6924A3FFCB00C0D43B /* iOS */,
 				53418C7024A3FFCB00C0D43B /* macOS */,
