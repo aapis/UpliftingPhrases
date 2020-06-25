@@ -10,55 +10,75 @@ import SwiftUI
 struct ContentView: View {
     @State var quote: String = phrases.first?.text ?? "Hello, world"
     @State var author: String = phrases.first?.author ?? "HAL 9000"
+    @State var currentIndex: Int = 0
     
     var body: some View {
         VStack {
             BannerImage()
                 .frame(height: 300)
                 .offset(y: -60)
-                .padding(.bottom, -60)
+                .padding(.bottom, -100)
             
             VStack(alignment: .leading) {
                 HStack {
-                    Text("\"" + quote + "\"")
-                        .font(.subheadline)
-                        .padding()
-                    Spacer()
-                }
-                
-                HStack {
-                    Text("-- " + author)
-                        .font(.subheadline)
-                        .padding()
-                    Spacer()
+                    AuthorView(key: self.author)
+                    
+                    VStack {
+                        HStack {
+                            Text("\"" + quote + "\"")
+                                .font(.subheadline)
+                                .padding()
+                            Spacer()
+                        }
+                        
+                        HStack {
+                            Text("-- " + author)
+                                .font(.subheadline)
+                                .padding()
+                            Spacer()
+                        }
+                    }
                 }
                 
                 VStack {
-                    Button("Inspire Me", action: loadAnother)
-                        .padding()
-                        .background(Color.pink)
-                        .foregroundColor(.white)
-                        .cornerRadius(40)
+                    Spacer()
+                    
+                    HStack {
+                        Spacer()
+                        Button("Inspire Me", action: next)
+                            .padding()
+                            .background(Color.pink)
+                            .foregroundColor(.white)
+                            .cornerRadius(40)
+                        Spacer()
+                    }
                 }
             }
-            .padding()
-            
-            Spacer()
         }
     }
     
-    func loadAnother() -> Void {
-        let index: Int = Int.random(in: 0..<phrases.count);
+    func next() -> Void {
+        let lastIndex: Int = self.currentIndex
+        self.currentIndex = chooseRandomIndex()
         
-        self.quote = phrases[index].text
-        self.author = phrases[index].author
+        // never show duplicate phrases
+        if lastIndex == self.currentIndex {
+            self.currentIndex = chooseRandomIndex()
+        }
+        
+        self.quote = phrases[self.currentIndex].text
+        self.author = phrases[self.currentIndex].author
+    }
+    
+    func chooseRandomIndex() -> Int {
+        return Int.random(in: 0..<phrases.count)
     }
 }
 
-
-
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+#endif

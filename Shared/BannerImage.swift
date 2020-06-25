@@ -10,7 +10,7 @@ import SwiftUI
 struct BannerImage: View {
     var body: some View {
         VStack {
-            Image("banner")
+            Image("alt_banner")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
             
@@ -29,8 +29,10 @@ struct BannerImage: View {
     }
 }
 
+#if DEBUG
 struct BannerImage_Previews: PreviewProvider {
     static var previews: some View {
         BannerImage()
     }
 }
+#endif

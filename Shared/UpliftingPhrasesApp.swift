@@ -16,8 +16,10 @@ struct UpliftingPhrasesApp: App {
     }
 }
 
+#if DEBUG
 struct UpliftingPhrasesApp_Previews: PreviewProvider {
     static var previews: some View {
-        Text("Turtle Rock")
+        ContentView()
     }
 }
+#endif
