@@ -16,7 +16,7 @@ struct ContentView: View {
         VStack {
             BannerImageView()
             
-            AuthorView(authorName: self.author)
+            AuthorView(name: self.author)
                 .offset(y: -160)
                 .padding(.bottom, -130)
             

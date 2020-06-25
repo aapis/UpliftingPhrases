@@ -16,9 +16,10 @@ struct BannerImageView: View {
     
     var body: some View {
         ZStack {
-            Image("alt_banner")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
+              // commented out until images can be set by the user
+//            Image("alt_banner")
+//                .resizable()
+//                .aspectRatio(contentMode: .fill)
             
             Rectangle()
                 .foregroundColor(.clear)
@@ -27,7 +28,6 @@ struct BannerImageView: View {
         }
         .offset(y: -50)
         .frame(height: 400)
-//        .padding(.bottom, -160)
     }
 }
 
