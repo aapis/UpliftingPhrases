@@ -7,19 +7,34 @@
 
 import SwiftUI
 
-struct BannerImageView: View {
-    #if targetEnvironment(simulator)
-    @State var userName = "Ryan"
-    #else
-    @State var userName = NSUserName()
-    #endif
-    
+struct BannerImageView: View {    
     var body: some View {
         ZStack {
               // commented out until images can be set by the user
 //            Image("alt_banner")
 //                .resizable()
 //                .aspectRatio(contentMode: .fill)
+            
+            VStack {
+                HStack {
+                    Text("Daily Inspiration")
+                        .font(.largeTitle)
+                        .bold()
+                        .foregroundColor(.pink)
+                        .padding()
+                    Spacer()
+                }
+            
+                HStack {
+                    Text(_date: Date())
+                        .font(.subheadline)
+                        .bold()
+                        .offset(y: -20)
+                        .padding()
+                    Spacer()
+                }
+            }
+            .offset(y: -90)
             
             Rectangle()
                 .foregroundColor(.clear)
