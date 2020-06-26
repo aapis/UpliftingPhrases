@@ -23,6 +23,8 @@
 		53418CA624A4128D00C0D43B /* BannerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA424A4128D00C0D43B /* BannerImageView.swift */; };
 		53418CA824A4301400C0D43B /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA724A4301400C0D43B /* AuthorView.swift */; };
 		53418CA924A4301400C0D43B /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA724A4301400C0D43B /* AuthorView.swift */; };
+		537B91D224A58D4E00579AFB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B91D124A58D4E00579AFB /* AboutView.swift */; };
+		537B91D324A58D4E00579AFB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537B91D124A58D4E00579AFB /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,7 @@
 		53418C9E24A4105500C0D43B /* Phrases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrases.swift; sourceTree = "<group>"; };
 		53418CA424A4128D00C0D43B /* BannerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageView.swift; sourceTree = "<group>"; };
 		53418CA724A4301400C0D43B /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
+		537B91D124A58D4E00579AFB /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,7 @@
 			children = (
 				53418C6024A3FFCA00C0D43B /* UpliftingPhrasesApp.swift */,
 				53418C6124A3FFCA00C0D43B /* ContentView.swift */,
+				537B91D124A58D4E00579AFB /* AboutView.swift */,
 				530F020E24A45B3F00A4A82B /* QuoteView.swift */,
 				53418CA724A4301400C0D43B /* AuthorView.swift */,
 				53418C6224A3FFCB00C0D43B /* Assets.xcassets */,
@@ -329,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53418CA824A4301400C0D43B /* AuthorView.swift in Sources */,
+				537B91D224A58D4E00579AFB /* AboutView.swift in Sources */,
 				530F020F24A45B3F00A4A82B /* QuoteView.swift in Sources */,
 				53418C9F24A4105500C0D43B /* Phrases.swift in Sources */,
 				53418CA524A4128D00C0D43B /* BannerImageView.swift in Sources */,
@@ -342,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53418CA924A4301400C0D43B /* AuthorView.swift in Sources */,
+				537B91D324A58D4E00579AFB /* AboutView.swift in Sources */,
 				530F021024A45B3F00A4A82B /* QuoteView.swift in Sources */,
 				53418CA024A4105500C0D43B /* Phrases.swift in Sources */,
 				53418CA624A4128D00C0D43B /* BannerImageView.swift in Sources */,

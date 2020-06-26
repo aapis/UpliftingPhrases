@@ -32,6 +32,7 @@ struct ContentView: View {
                     .background(Color.pink)
                     .foregroundColor(.white)
                     .cornerRadius(40)
+                    .offset(y: -40)
                 Spacer()
             }
         }
