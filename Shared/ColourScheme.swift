@@ -23,10 +23,10 @@ struct LGradient {
 }
 
 struct ColourScheme {
-    @Environment(\.colorScheme) var displayMode
-    
     public var gradient: [Color] = LGradient(start: Color.white, end: Color.white).toArray()
-    public var highlight: Color = Color.white
+    public var background: Color = Color.white
+    public var text: Color = Color.white
+    public var button: [Color] = LGradient(start: Color.white, end: Color.white).toArray()
     
     private var hour: Int = 0
     
@@ -36,32 +36,42 @@ struct ColourScheme {
 //        let timer = Timer.publish(every: 3600, on: .main, in: .common).autoconnect()
 
         hour = calendar.component(.hour, from: date)
-//        hour = 23
+        
 //        timer.
         
         if isMorning() {
             gradient = LGradient(start: Color.blue, end: Color.pink).toArray()
-            highlight = Color.pink
+            background = Color.clear
+            text = Color.red
+            button = gradient.reversed()
         }
         
         if isMidDay() {
             gradient = LGradient(start: Color.yellow, end: Color.red).toArray()
-            highlight = Color.red
+            background = Color.clear
+            text = Color.red
+            button = gradient.reversed()
         }
         
         if isAfternoon() {
             gradient = LGradient(start: Color.white, end: Color.yellow).toArray()
-            highlight = Color.orange
+            background = Color.clear
+            text = Color.orange
+            button = gradient.reversed()
         }
         
         if isEvening() {
             gradient = LGradient(start: Color.purple, end: Color.blue).toArray()
-            highlight = Color.purple
+            background = Color.clear
+            text = Color.red
+            button = gradient.reversed()
         }
         
         if isNight() {
-            gradient = LGradient(start: Color.purple, end: Color.black).toArray()
-            highlight = Color.purple
+            gradient = LGradient(start: Color.blue, end: Color.black).toArray()
+            background = Color.clear
+            text = Color.red
+            button = gradient.reversed()
         }
     }
     
@@ -74,18 +84,18 @@ struct ColourScheme {
     }
     
     func isMidDay() -> Bool {
-        return hour >= 9 && hour <= 12
+        return hour >= 8 && hour <= 12
     }
     
     func isAfternoon() -> Bool {
-        return hour >= 13 && hour <= 18
+        return hour >= 12 && hour <= 18
     }
     
     func isEvening() -> Bool {
-        return hour >= 19 && hour <= 21
+        return hour >= 18 && hour <= 21
     }
     
     func isNight() -> Bool {
-        return hour >= 22 && hour < 24
+        return hour >= 0 && hour < 8
     }
 }
