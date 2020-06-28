@@ -13,7 +13,7 @@ struct AuthorView: View {
     
     var body: some View {
         VStack {
-            Image(self.name)
+            Image(name)
                 .resizable()
                 .frame(width: 130, height: 130)
                 .scaledToFit()
@@ -23,9 +23,9 @@ struct AuthorView: View {
                 .shadow(radius: 10)
                 .padding()
             
-            Text(self.name)
+            Text(name)
                 .font(.title)
-                .foregroundColor(.black)
+                .foregroundColor(scheme.highlight)
         }
     }
 }

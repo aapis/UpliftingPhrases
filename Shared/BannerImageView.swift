@@ -16,7 +16,7 @@ struct BannerImageView: View {
 //                .resizable()
 //                .aspectRatio(contentMode: .fill)
             Rectangle()
-                .foregroundColor(scheme.background)
+                .foregroundColor(scheme.highlight)
                 .background(LinearGradient(gradient: Gradient(colors: scheme.gradient), startPoint: .top, endPoint: .bottom))
                 .opacity(0.6)
             
@@ -25,7 +25,7 @@ struct BannerImageView: View {
                     Text("Daily Inspiration")
                         .font(.largeTitle)
                         .bold()
-                        .foregroundColor(scheme.text)
+                        .foregroundColor(Color.white)
                         .padding()
                     Spacer()
                 }
@@ -34,7 +34,7 @@ struct BannerImageView: View {
                     Text(_date: Date())
                         .font(.subheadline)
                         .bold()
-                        .foregroundColor(scheme.text)
+                        .foregroundColor(Color.white)
                         .offset(y: -20)
                         .padding()
                     Spacer()
