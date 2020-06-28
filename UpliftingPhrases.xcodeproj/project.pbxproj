@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		530F020F24A45B3F00A4A82B /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530F020E24A45B3F00A4A82B /* QuoteView.swift */; };
 		530F021024A45B3F00A4A82B /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530F020E24A45B3F00A4A82B /* QuoteView.swift */; };
+		531C0CE324A9179E00F55CDE /* ColourScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C0CE224A9179E00F55CDE /* ColourScheme.swift */; };
+		531C0CE424A9179E00F55CDE /* ColourScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531C0CE224A9179E00F55CDE /* ColourScheme.swift */; };
 		53418C7C24A3FFCC00C0D43B /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418C7B24A3FFCC00C0D43B /* Tests_iOS.swift */; };
 		53418C8724A3FFCC00C0D43B /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418C8624A3FFCC00C0D43B /* Tests_macOS.swift */; };
 		53418C8924A3FFCC00C0D43B /* UpliftingPhrasesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418C6024A3FFCA00C0D43B /* UpliftingPhrasesApp.swift */; };
@@ -47,6 +49,7 @@
 /* Begin PBXFileReference section */
 		530F020E24A45B3F00A4A82B /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		530F021724A4665300A4A82B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		531C0CE224A9179E00F55CDE /* ColourScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourScheme.swift; sourceTree = "<group>"; };
 		53418C6024A3FFCA00C0D43B /* UpliftingPhrasesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpliftingPhrasesApp.swift; sourceTree = "<group>"; };
 		53418C6124A3FFCA00C0D43B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		53418C6224A3FFCB00C0D43B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +103,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		531C0CE824A91A9900F55CDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				53418CA424A4128D00C0D43B /* BannerImageView.swift */,
+				530F020E24A45B3F00A4A82B /* QuoteView.swift */,
+				537B91D124A58D4E00579AFB /* AboutView.swift */,
+				53418C6124A3FFCA00C0D43B /* ContentView.swift */,
+				53418CA724A4301400C0D43B /* AuthorView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		531C0CE924A91AC100F55CDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				53418C9E24A4105500C0D43B /* Phrases.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		53418C5A24A3FFCA00C0D43B = {
 			isa = PBXGroup;
 			children = (
@@ -116,14 +139,11 @@
 		53418C5F24A3FFCA00C0D43B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				531C0CE924A91AC100F55CDE /* Models */,
+				531C0CE824A91A9900F55CDE /* Views */,
 				53418C6024A3FFCA00C0D43B /* UpliftingPhrasesApp.swift */,
-				53418C6124A3FFCA00C0D43B /* ContentView.swift */,
-				537B91D124A58D4E00579AFB /* AboutView.swift */,
-				530F020E24A45B3F00A4A82B /* QuoteView.swift */,
-				53418CA724A4301400C0D43B /* AuthorView.swift */,
+				531C0CE224A9179E00F55CDE /* ColourScheme.swift */,
 				53418C6224A3FFCB00C0D43B /* Assets.xcassets */,
-				53418CA424A4128D00C0D43B /* BannerImageView.swift */,
-				53418C9E24A4105500C0D43B /* Phrases.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -338,6 +358,7 @@
 				53418C9F24A4105500C0D43B /* Phrases.swift in Sources */,
 				53418CA524A4128D00C0D43B /* BannerImageView.swift in Sources */,
 				53418C8B24A3FFCC00C0D43B /* ContentView.swift in Sources */,
+				531C0CE324A9179E00F55CDE /* ColourScheme.swift in Sources */,
 				53418C8924A3FFCC00C0D43B /* UpliftingPhrasesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +373,7 @@
 				53418CA024A4105500C0D43B /* Phrases.swift in Sources */,
 				53418CA624A4128D00C0D43B /* BannerImageView.swift in Sources */,
 				53418C8C24A3FFCC00C0D43B /* ContentView.swift in Sources */,
+				531C0CE424A9179E00F55CDE /* ColourScheme.swift in Sources */,
 				53418C8A24A3FFCC00C0D43B /* UpliftingPhrasesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
