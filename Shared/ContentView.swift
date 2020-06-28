@@ -29,14 +29,7 @@ struct ContentView: View {
                 Spacer()
                 
                 Button("Inspire Me", action: next)
-                    .padding()
-                    .frame(width: 300, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(scheme.text)
-                    .background(
-                        LinearGradient(gradient: Gradient(colors: scheme.button), startPoint: .top, endPoint: .bottom)
-                    )
-                    .cornerRadius(40)
-                    .offset(y: -40)
+                    .buttonStyle(InspireMeButtonStyle(scheme: scheme))
                 Spacer()
             }
         }
@@ -57,6 +50,20 @@ struct ContentView: View {
     
     func chooseRandomIndex() -> Int {
         return Int.random(in: 0..<phrases.count)
+    }
+}
+
+struct InspireMeButtonStyle: ButtonStyle {
+    @State var scheme: ColourScheme
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .frame(width: 300, height: 50, alignment: .center)
+            .foregroundColor(Color.white)
+            .background(scheme.highlight)
+            .cornerRadius(40)
+            .offset(y: -40)
+            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
     }
 }
 
