@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct QuoteView: View {
+    var scheme: ColourScheme
     var quote: String
     
     var body: some View {
@@ -16,7 +17,7 @@ struct QuoteView: View {
             
             HStack {
                 Text("\"" + quote + "\"")
-                    .font(.subheadline)
+                    .font(.body)
                     .padding()
                 Spacer()
             }
@@ -26,6 +27,6 @@ struct QuoteView: View {
 
 struct QuoteView_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteView(quote: "Hello")
+        QuoteView(scheme: ColourScheme(), quote: "Hello")
     }
 }

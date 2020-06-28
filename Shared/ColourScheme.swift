@@ -8,67 +8,94 @@
 import Foundation
 import SwiftUI
 
+struct LGradient {
+    public var start: Color
+    public var end: Color
+    
+    public func toArray() -> [Color] {
+        let array: [Color] = [
+            start,
+            end
+        ]
+        
+        return array
+    }
+}
+
 struct ColourScheme {
-    var current: [Color] {
+    public var gradient: [Color] = LGradient(start: Color.white, end: Color.white).toArray()
+    public var background: Color = Color.white
+    public var text: Color = Color.white
+    public var button: [Color] = LGradient(start: Color.white, end: Color.white).toArray()
+    
+    private var hour: Int = 0
+    
+    init() {
         let date = Date()
         let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
+//        let timer = Timer.publish(every: 3600, on: .main, in: .common).autoconnect()
+
+        hour = calendar.component(.hour, from: date)
         
-        if hour >= 0 && hour < 8 {
-            return morning()
-        } else if hour >= 8 && hour <= 12 {
-            return midDay()
-        } else if hour >= 12 && hour <= 18 {
-            return afternoon()
-        } else if hour >= 18 && hour <= 21 {
-            return evening()
-        } else {
-            return night()
+//        timer.
+        
+        if isMorning() {
+            gradient = LGradient(start: Color.blue, end: Color.pink).toArray()
+            background = Color.clear
+            text = Color.red
+            button = gradient.reversed()
+        }
+        
+        if isMidDay() {
+            gradient = LGradient(start: Color.yellow, end: Color.red).toArray()
+            background = Color.clear
+            text = Color.red
+            button = gradient.reversed()
+        }
+        
+        if isAfternoon() {
+            gradient = LGradient(start: Color.white, end: Color.yellow).toArray()
+            background = Color.clear
+            text = Color.orange
+            button = gradient.reversed()
+        }
+        
+        if isEvening() {
+            gradient = LGradient(start: Color.purple, end: Color.blue).toArray()
+            background = Color.clear
+            text = Color.red
+            button = gradient.reversed()
+        }
+        
+        if isNight() {
+            gradient = LGradient(start: Color.blue, end: Color.black).toArray()
+            background = Color.clear
+            text = Color.red
+            button = gradient.reversed()
         }
     }
     
-    func morning() -> [Color] {
-        var val: [Color] = []
-        
-        val.append(Color.blue)
-        val.append(Color.pink)
-        
-        return val
+    func test() {
+        print("hello world")
     }
     
-    private func midDay() -> [Color] {
-        var val: [Color] = []
-        
-        val.append(Color.yellow)
-        val.append(Color.red)
-        
-        return val
+    func isMorning() -> Bool {
+        return hour >= 0 && hour < 8
     }
     
-    private func afternoon() -> [Color] {
-        var val: [Color] = []
-        
-        val.append(Color.white)
-        val.append(Color.yellow)
-        
-        return val
+    func isMidDay() -> Bool {
+        return hour >= 8 && hour <= 12
     }
     
-    private func evening() -> [Color] {
-        var val: [Color] = []
-        
-        val.append(Color.purple)
-        val.append(Color.blue)
-        
-        return val
+    func isAfternoon() -> Bool {
+        return hour >= 12 && hour <= 18
     }
     
-    private func night() -> [Color] {
-        var val: [Color] = []
-        
-        val.append(Color.blue)
-        val.append(Color.black)
-        
-        return val
+    func isEvening() -> Bool {
+        return hour >= 18 && hour <= 21
+    }
+    
+    func isNight() -> Bool {
+        return hour >= 0 && hour < 8
     }
 }

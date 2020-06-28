@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct AuthorView: View {
+    var scheme: ColourScheme
     var name: String
     
     var body: some View {
         VStack {
             Image(self.name)
                 .resizable()
-                .frame(width: 150, height: 150)
+                .frame(width: 130, height: 130)
                 .scaledToFit()
                 .clipShape(Circle())
                 .overlay(
@@ -32,12 +33,12 @@ struct AuthorView: View {
 struct AuthorView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            AuthorView(name: "Martin Luther King Jr.")
-            AuthorView(name: "Maya Angelou")
-            AuthorView(name: "Mahatma Gandhi")
-            AuthorView(name: "Oscar Wilde")
-            AuthorView(name: "Eleanor Roosevelt")
-            AuthorView(name: "William W. Purkey")
+            AuthorView(scheme: ColourScheme(), name: "Martin Luther King Jr.")
+            AuthorView(scheme: ColourScheme(), name: "Maya Angelou")
+            AuthorView(scheme: ColourScheme(), name: "Mahatma Gandhi")
+            AuthorView(scheme: ColourScheme(), name: "Oscar Wilde")
+            AuthorView(scheme: ColourScheme(), name: "Eleanor Roosevelt")
+            AuthorView(scheme: ColourScheme(), name: "William W. Purkey")
         }
     }
 }

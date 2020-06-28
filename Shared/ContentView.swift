@@ -11,16 +11,17 @@ struct ContentView: View {
     @State var quote: String = phrases.first?.text ?? "I can't do that"
     @State var author: String = phrases.first?.author ?? "HAL 9000"
     @State var currentIndex: Int = 0
+    @State var scheme: ColourScheme = ColourScheme()
     
     var body: some View {
         VStack {
-            BannerImageView()
+            BannerImageView(scheme: scheme)
             
-            AuthorView(name: self.author)
-                .offset(y: -160)
+            AuthorView(scheme: scheme, name: self.author)
+                .offset(y: -150)
                 .padding(.bottom, -130)
-            
-            QuoteView(quote: self.quote)
+
+            QuoteView(scheme: scheme, quote: self.quote)
             
             Spacer()
             
@@ -29,8 +30,11 @@ struct ContentView: View {
                 
                 Button("Inspire Me", action: next)
                     .padding()
-                    .background(Color.pink)
-                    .foregroundColor(.white)
+                    .frame(width: 300, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(scheme.text)
+                    .background(
+                        LinearGradient(gradient: Gradient(colors: scheme.button), startPoint: .top, endPoint: .bottom)
+                    )
                     .cornerRadius(40)
                     .offset(y: -40)
                 Spacer()
@@ -58,6 +62,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(scheme: ColourScheme())
     }
 }

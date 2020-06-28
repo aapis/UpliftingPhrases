@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AboutView: View {
+    var scheme: ColourScheme
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -22,6 +24,6 @@ struct AboutView: View {
 
 struct AboutView_Previews: PreviewProvider {
     static var previews: some View {
-        AboutView()
+        AboutView(scheme: ColourScheme())
     }
 }
