@@ -11,13 +11,13 @@ import SwiftUI
 struct UpliftingPhrasesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
 
 struct UpliftingPhrasesApp_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }

@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct FavouritesView: View {
     var data: [Quote]
     
-    @State var quote: String = Quotes.first?.text ?? "I can't do that"
-    @State var author: String = Quotes.first?.author ?? "HAL 9000"
-    @State var favourite: Bool = Quotes.first?.favourite ?? false
+    @State var quote: String = phrases.first?.text ?? "I can't do that"
+    @State var author: String = phrases.first?.author ?? "HAL 9000"
+    @State var favourite: Bool = phrases.first?.favourite ?? false
     @State var currentIndex: Int = 0
     @State var scheme: ColourScheme = ColourScheme()
     
@@ -43,7 +43,7 @@ struct ContentView: View {
                     
             }
         }
-        .navigationBarTitle("All", displayMode: .inline)
+        .navigationBarTitle("Favourites", displayMode: .inline)
     }
     
     func next() -> Void {
@@ -55,8 +55,8 @@ struct ContentView: View {
             self.currentIndex = chooseRandomIndex()
         }
         
-        self.quote = Quotes[self.currentIndex].text
-        self.author = Quotes[self.currentIndex].author
+        self.quote = phrases[self.currentIndex].text
+        self.author = phrases[self.currentIndex].author
     }
     
     func chooseRandomIndex() -> Int {
@@ -64,46 +64,16 @@ struct ContentView: View {
     }
     
     func love() -> Void {
-        Quotes[self.currentIndex].favourite = true
+        phrases[self.currentIndex].favourite = true
     }
     
     func isLoved() -> Bool {
-        return Quotes[self.currentIndex].favourite == true
+        return phrases[self.currentIndex].favourite == true
     }
 }
 
-struct InspireMeButtonStyle: ButtonStyle {
-    var scheme: ColourScheme
-    
-    func makeBody(configuration: Configuration) -> some View {
-        HStack {
-            configuration.label
-                .frame(width: 300, height: 50, alignment: .center)
-                .foregroundColor(Color.white)
-                .background(scheme.highlight)
-                .cornerRadius(40)
-                .offset(y: -40)
-                .scaleEffect(configuration.isPressed ? 0.97 : 1.0)
-        }
-    }
-}
-
-struct FavouriteButtonStyle: ButtonStyle {
-    var scheme: ColourScheme
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .frame(width: 300, height: 50, alignment: .center)
-            .foregroundColor(Color.white)
-            .background(scheme.highlight)
-            .cornerRadius(40)
-            .offset(y: -40)
-            .scaleEffect(configuration.isPressed ? 0.97 : 1.0)
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
+struct FavouritesView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(data: Quotes)
+        FavouritesView(data: Favourites)
     }
 }
