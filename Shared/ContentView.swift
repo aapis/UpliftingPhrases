@@ -46,15 +46,15 @@ struct ContentView: View {
     }
     
     func author() -> String {
-        model.list[currentIndex].author
+        model.all()[currentIndex].author
     }
     
     func quote() -> String {
-        model.list[currentIndex].text
+        model.all()[currentIndex].text
     }
     
     func favourite() -> Bool {
-        model.list[currentIndex].favourite
+        model.all()[currentIndex].favourite
     }
     
     func next() -> Void {
@@ -68,11 +68,11 @@ struct ContentView: View {
     }
     
     func chooseRandomIndex() -> Int {
-        return Int.random(in: 0..<model.list.count)
+        return Int.random(in: 0..<model.all().count)
     }
     
     func love() -> Void {
-        let current = model.list[self.currentIndex]
+        let current = model.all()[self.currentIndex]
         
         if current.favourite {
             model.list[self.currentIndex].favourite = false
@@ -82,37 +82,7 @@ struct ContentView: View {
     }
     
     func isLoved() -> Bool {
-        return model.list[self.currentIndex].favourite == true
-    }
-}
-
-struct InspireMeButtonStyle: ButtonStyle {
-    var scheme: ColourScheme
-    
-    func makeBody(configuration: Configuration) -> some View {
-        HStack {
-            configuration.label
-                .frame(width: 300, height: 50, alignment: .center)
-                .foregroundColor(Color.white)
-                .background(scheme.highlight)
-                .cornerRadius(40)
-                .offset(y: -40)
-                .scaleEffect(configuration.isPressed ? 0.97 : 1.0)
-        }
-    }
-}
-
-struct FavouriteButtonStyle: ButtonStyle {
-    var scheme: ColourScheme
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .frame(width: 300, height: 50, alignment: .center)
-            .foregroundColor(Color.white)
-            .background(scheme.highlight)
-            .cornerRadius(40)
-            .offset(y: -40)
-            .scaleEffect(configuration.isPressed ? 0.97 : 1.0)
+        return model.all()[self.currentIndex].favourite == true
     }
 }
 

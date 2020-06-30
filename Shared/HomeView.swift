@@ -34,7 +34,7 @@ struct ListView: View {
                         Image(systemName: "list.bullet")
                         Text("All Quotes")
                         Spacer()
-                        Text("\(model.list.count)")
+                        Text("\(model.all().count)")
                     }
                 }
                 
