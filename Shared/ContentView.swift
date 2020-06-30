@@ -9,19 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var model: QuotesModel
+    @EnvironmentObject var theme: Theme
     
     @State var currentIndex: Int = 0
-    @State var scheme: ColourScheme = ColourScheme()
     
     var body: some View {
         return VStack {
-            BannerImageView(scheme: scheme)
+            BannerImageView()
             
-            AuthorView(scheme: scheme, name: author())
+            AuthorView(name: author())
                 .offset(y: -150)
                 .padding(.bottom, -130)
 
-            QuoteView(scheme: scheme, quote: quote())
+            QuoteView(quote: quote())
             
             Spacer()
             
@@ -29,7 +29,7 @@ struct ContentView: View {
                 Spacer()
                 
                 Button("Inspire Me", action: next)
-                    .buttonStyle(InspireMeButtonStyle(scheme: scheme))
+                    .buttonStyle(InspireMeButtonStyle(theme: theme))
                 Spacer()
                     
             }
@@ -39,7 +39,7 @@ struct ContentView: View {
             Button(action: love) {
                 HStack {
                     Image(systemName: isLoved() ? "heart.fill" : "heart")
-                        .accentColor(.pink)
+                        .accentColor(theme.highlight)
                 }
             }
         )

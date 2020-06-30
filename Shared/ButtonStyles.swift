@@ -9,14 +9,14 @@ import SwiftUI
 import Foundation
 
 struct InspireMeButtonStyle: ButtonStyle {
-    var scheme: ColourScheme
+    var theme: Theme
     
     func makeBody(configuration: Configuration) -> some View {
         HStack {
             configuration.label
                 .frame(width: 300, height: 50, alignment: .center)
                 .foregroundColor(Color.white)
-                .background(scheme.highlight)
+                .background(theme.highlight)
                 .cornerRadius(40)
                 .offset(y: -40)
                 .scaleEffect(configuration.isPressed ? 0.97 : 1.0)
@@ -25,13 +25,13 @@ struct InspireMeButtonStyle: ButtonStyle {
 }
 
 struct FavouriteButtonStyle: ButtonStyle {
-    var scheme: ColourScheme
+    var theme: Theme
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(width: 300, height: 50, alignment: .center)
             .foregroundColor(Color.white)
-            .background(scheme.highlight)
+            .background(theme.highlight)
             .cornerRadius(40)
             .offset(y: -40)
             .scaleEffect(configuration.isPressed ? 0.97 : 1.0)

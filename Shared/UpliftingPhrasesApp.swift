@@ -15,7 +15,11 @@ struct UpliftingPhrasesApp: App {
     var body: some Scene {
         WindowGroup {
             let model = QuotesModel()
-            HomeView().environmentObject(model)
+            let theme = Theme()
+            
+            HomeView()
+                .environmentObject(model)
+                .environmentObject(theme)
         }
 //        .onChange(of: scenePhase) { (newScenePhase) in
 //            switch newScenePhase {

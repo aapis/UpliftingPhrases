@@ -9,19 +9,19 @@ import SwiftUI
 
 struct FavouritesView: View {
     @EnvironmentObject var model: QuotesModel
+    @EnvironmentObject var theme: Theme
     
     @State var currentIndex: Int = 0
-    @State var scheme: ColourScheme = ColourScheme()
     
     var body: some View {
         VStack {
-            BannerImageView(scheme: scheme)
+            BannerImageView()
             
-            AuthorView(scheme: scheme, name: author())
+            AuthorView(name: author())
                 .offset(y: -150)
                 .padding(.bottom, -130)
 
-            QuoteView(scheme: scheme, quote: quote())
+            QuoteView(quote: quote())
             
             Spacer()
             
@@ -30,7 +30,7 @@ struct FavouritesView: View {
                 
                 if model.favourites().count > 0 {
                     Button("Next", action: next)
-                        .buttonStyle(InspireMeButtonStyle(scheme: scheme))
+                        .buttonStyle(InspireMeButtonStyle(theme: theme))
                     Spacer()
                 }
             }
