@@ -28,31 +28,45 @@ struct FavouritesView: View {
             HStack {
                 Spacer()
                 
-                Button("Inspire Me", action: next)
-                    .buttonStyle(InspireMeButtonStyle(scheme: scheme))
-                Spacer()
+                if model.favourites().count > 0 {
+                    Button("Next", action: next)
+                        .buttonStyle(InspireMeButtonStyle(scheme: scheme))
+                    Spacer()
                 
-                Button(action: love) {
-                    HStack {
-                        Image(systemName: isLoved() ? "heart.fill" : "heart")
+                
+                    Button(action: love) {
+                        HStack {
+                            Image(systemName: isLoved() ? "heart.fill" : "heart")
+                        }
                     }
-                }
-                    
+                }   
             }
         }
         .navigationBarTitle("All", displayMode: .inline)
     }
     
     func author() -> String {
-        model.favourites()[currentIndex].author
+        guard currentIndex > model.favourites().count else {
+            return model.defaultEntry().author
+        }
+        
+        return model.favourites()[currentIndex].author
     }
     
     func quote() -> String {
-        model.favourites()[currentIndex].text
+        guard currentIndex > model.favourites().count else {
+            return model.defaultEntry().text
+        }
+        
+        return model.favourites()[currentIndex].text
     }
     
     func favourite() -> Bool {
-        model.favourites()[currentIndex].favourite
+        guard currentIndex > model.favourites().count else {
+            return model.defaultEntry().favourite
+        }
+        
+        return model.favourites()[currentIndex].favourite
     }
     
     func next() -> Void {
@@ -70,7 +84,7 @@ struct FavouritesView: View {
     }
     
     func love() -> Void {
-        let current = model.list[self.currentIndex]
+        let current = model.favourites()[self.currentIndex]
         
         if current.favourite {
             model.list[self.currentIndex].favourite = false
