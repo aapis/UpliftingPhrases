@@ -25,6 +25,7 @@ struct FeaturedQuoteView: View {
 
 struct ListView: View {
     @EnvironmentObject var model: QuotesModel
+    @State var scheme: ColourScheme = ColourScheme()
     
     var body: some View {
         NavigationView {
@@ -32,6 +33,7 @@ struct ListView: View {
                 NavigationLink(destination: ContentView()) {
                     HStack {
                         Image(systemName: "list.bullet")
+                            .foregroundColor(scheme.highlight)
                         Text("All Quotes")
                         Spacer()
                         Text("\(model.all().count)")
@@ -41,13 +43,14 @@ struct ListView: View {
                 NavigationLink(destination: FavouritesView()) {
                     HStack {
                         Image(systemName: "heart")
+                            .foregroundColor(scheme.highlight)
                         Text("Favourites")
                         Spacer()
                         Text("\(model.favourites().count)")
                     }
                 }
             }
-            .listStyle(InsetGroupedListStyle())
+            .listStyle(SidebarListStyle())
             .navigationBarTitle("Daily Inspiration")
         }
     }
