@@ -32,17 +32,17 @@ struct FavouritesView: View {
                     Button("Next", action: next)
                         .buttonStyle(InspireMeButtonStyle(scheme: scheme))
                     Spacer()
-                
-                
-                    Button(action: love) {
-                        HStack {
-                            Image(systemName: isLoved() ? "heart.fill" : "heart")
-                        }
-                    }
-                }   
+                }
             }
         }
         .navigationBarTitle("All", displayMode: .inline)
+        .navigationBarItems(trailing:
+            Button(action: love) {
+                HStack {
+                    Image(systemName: isLoved() ? "heart.fill" : "heart")
+                }
+            }
+        )
     }
     
     func author() -> String {
