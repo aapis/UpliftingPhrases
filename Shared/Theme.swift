@@ -8,19 +8,19 @@
 import Foundation
 import SwiftUI
 
-//struct LGradient {
-//    public var start: Color
-//    public var end: Color
-//
-//    public func toArray() -> [Color] {
-//        let array: [Color] = [
-//            start,
-//            end
-//        ]
-//
-//        return array
-//    }
-//}
+struct LGradient {
+    public var start: Color
+    public var end: Color
+
+    public func toArray() -> [Color] {
+        let array: [Color] = [
+            start,
+            end
+        ]
+
+        return array
+    }
+}
 
 class Theme: ObservableObject {
     @Published var highlight: Color = Color.white
