@@ -10,6 +10,14 @@ import Foundation
 var Quotes: [Quote] = load("Quotes.json")
 var Favourites: [Quote] = Quotes.filter { $0.favourite == true }
 
+class QuotesModel: ObservableObject {
+    @Published var list: [Quote] = load("Quotes.json")
+    
+    public func favourites() -> [Quote] {
+        return list.filter { $0.favourite == true }
+    }
+}
+
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
     

@@ -24,24 +24,26 @@ struct FeaturedQuoteView: View {
 }
 
 struct ListView: View {
+    @EnvironmentObject var model: QuotesModel
+    
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: ContentView(data: Quotes)) {
+                NavigationLink(destination: ContentView()) {
                     HStack {
                         Image(systemName: "list.bullet")
                         Text("All")
                         Spacer()
-                        Text("\(Quotes.count)")
+                        Text("\(model.list.count)")
                     }
                 }
                 
-                NavigationLink(destination: FavouritesView(data: Favourites)) {
+                NavigationLink(destination: FavouritesView()) {
                     HStack {
                         Image(systemName: "heart")
                         Text("Favourites")
                         Spacer()
-                        Text("\(Favourites.count)")
+                        Text("\(model.favourites().count)")
                     }
                 }
             }

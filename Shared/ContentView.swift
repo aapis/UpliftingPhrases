@@ -8,23 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    var data: [Quote]
+    @EnvironmentObject var model: QuotesModel
     
-    @State var quote: String = Quotes.first?.text ?? "I can't do that"
-    @State var author: String = Quotes.first?.author ?? "HAL 9000"
-    @State var favourite: Bool = Quotes.first?.favourite ?? false
     @State var currentIndex: Int = 0
     @State var scheme: ColourScheme = ColourScheme()
     
     var body: some View {
-        VStack {
+        return VStack {
             BannerImageView(scheme: scheme)
             
-            AuthorView(scheme: scheme, name: self.author)
+            AuthorView(scheme: scheme, name: author())
                 .offset(y: -150)
                 .padding(.bottom, -130)
 
-            QuoteView(scheme: scheme, quote: self.quote)
+            QuoteView(scheme: scheme, quote: quote())
             
             Spacer()
             
@@ -46,6 +43,18 @@ struct ContentView: View {
         .navigationBarTitle("All", displayMode: .inline)
     }
     
+    func author() -> String {
+        model.list[currentIndex].author
+    }
+    
+    func quote() -> String {
+        model.list[currentIndex].text
+    }
+    
+    func favourite() -> Bool {
+        model.list[currentIndex].favourite
+    }
+    
     func next() -> Void {
         let lastIndex: Int = self.currentIndex
         self.currentIndex = chooseRandomIndex()
@@ -54,21 +63,24 @@ struct ContentView: View {
         if lastIndex == self.currentIndex {
             self.currentIndex = chooseRandomIndex()
         }
-        
-        self.quote = Quotes[self.currentIndex].text
-        self.author = Quotes[self.currentIndex].author
     }
     
     func chooseRandomIndex() -> Int {
-        return Int.random(in: 0..<phrases.count)
+        return Int.random(in: 0..<model.list.count)
     }
     
     func love() -> Void {
-        Quotes[self.currentIndex].favourite = true
+        let current = model.list[self.currentIndex]
+        
+        if current.favourite {
+            model.list[self.currentIndex].favourite = false
+        } else {
+            model.list[self.currentIndex].favourite = true
+        }
     }
     
     func isLoved() -> Bool {
-        return Quotes[self.currentIndex].favourite == true
+        return model.list[self.currentIndex].favourite == true
     }
 }
 
@@ -104,6 +116,6 @@ struct FavouriteButtonStyle: ButtonStyle {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(data: Quotes)
+        ContentView()
     }
 }
