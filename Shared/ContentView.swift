@@ -34,11 +34,12 @@ struct ContentView: View {
                     
             }
         }
-        .navigationBarTitle("All", displayMode: .inline)
+        .navigationBarTitle("All Quotes", displayMode: .inline)
         .navigationBarItems(trailing:
             Button(action: love) {
                 HStack {
                     Image(systemName: isLoved() ? "heart.fill" : "heart")
+                        .accentColor(.pink)
                 }
             }
         )

@@ -32,7 +32,7 @@ struct ListView: View {
                 NavigationLink(destination: ContentView()) {
                     HStack {
                         Image(systemName: "list.bullet")
-                        Text("All")
+                        Text("All Quotes")
                         Spacer()
                         Text("\(model.list.count)")
                     }

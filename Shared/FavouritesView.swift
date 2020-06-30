@@ -35,18 +35,11 @@ struct FavouritesView: View {
                 }
             }
         }
-        .navigationBarTitle("All", displayMode: .inline)
-        .navigationBarItems(trailing:
-            Button(action: love) {
-                HStack {
-                    Image(systemName: isLoved() ? "heart.fill" : "heart")
-                }
-            }
-        )
+        .navigationBarTitle("Favourites", displayMode: .inline)
     }
     
     func author() -> String {
-        guard currentIndex > model.favourites().count else {
+        if (currentIndex >= model.favourites().count) {
             return model.defaultEntry().author
         }
         
@@ -54,7 +47,7 @@ struct FavouritesView: View {
     }
     
     func quote() -> String {
-        guard currentIndex > model.favourites().count else {
+        if (currentIndex >= model.favourites().count) {
             return model.defaultEntry().text
         }
         
@@ -62,7 +55,7 @@ struct FavouritesView: View {
     }
     
     func favourite() -> Bool {
-        guard currentIndex > model.favourites().count else {
+        if (currentIndex >= model.favourites().count) {
             return model.defaultEntry().favourite
         }
         
@@ -83,18 +76,12 @@ struct FavouritesView: View {
         return Int.random(in: 0..<model.favourites().count)
     }
     
-    func love() -> Void {
-        let current = model.favourites()[self.currentIndex]
-        
-        if current.favourite {
-            model.list[self.currentIndex].favourite = false
-        } else {
-            model.list[self.currentIndex].favourite = true
-        }
-    }
-    
     func isLoved() -> Bool {
-        return model.list[self.currentIndex].favourite == true
+        if (currentIndex >= model.favourites().count) {
+            return model.defaultEntry().favourite
+        }
+        
+        return model.favourites()[self.currentIndex].favourite == true
     }
 }
 

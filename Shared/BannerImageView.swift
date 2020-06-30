@@ -19,28 +19,6 @@ struct BannerImageView: View {
                 .foregroundColor(scheme.highlight)
                 .background(LinearGradient(gradient: Gradient(colors: scheme.gradient), startPoint: .top, endPoint: .bottom))
                 .opacity(0.6)
-            
-            VStack {
-                HStack {
-                    Text("Daily Inspiration")
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundColor(Color.white)
-                        .padding()
-                    Spacer()
-                }
-            
-                HStack {
-                    Text(_date: Date())
-                        .font(.subheadline)
-                        .bold()
-                        .foregroundColor(Color.white)
-                        .offset(y: -20)
-                        .padding()
-                    Spacer()
-                }
-            }
-            .offset(y: -20)
         }
         .offset(y: -50)
         .frame(height: 250)
