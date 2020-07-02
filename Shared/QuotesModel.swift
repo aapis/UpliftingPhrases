@@ -28,6 +28,10 @@ class QuotesModel: ObservableObject {
         return Quote(text: "There is no greater agony than bearing an untold story inside you.", author: "Maya Angelou", favourite: false)
     }
     
+    public func random() -> Quote {
+        return list.randomElement()!
+    }
+    
     static private func getJson<T: Decodable>(_ filename: String) -> T {
         let data: Data
         

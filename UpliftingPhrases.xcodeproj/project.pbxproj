@@ -29,6 +29,8 @@
 		53418CA624A4128D00C0D43B /* BannerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA424A4128D00C0D43B /* BannerImageView.swift */; };
 		53418CA824A4301400C0D43B /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA724A4301400C0D43B /* AuthorView.swift */; };
 		53418CA924A4301400C0D43B /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53418CA724A4301400C0D43B /* AuthorView.swift */; };
+		535E45B824AD7887008CDC2C /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535E45B724AD7887008CDC2C /* Toast.swift */; };
+		535E45B924AD7887008CDC2C /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535E45B724AD7887008CDC2C /* Toast.swift */; };
 		5385CAB324A97A4200D5104E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5385CAB224A97A4200D5104E /* Settings.bundle */; };
 		5385CAB424A97A4200D5104E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5385CAB224A97A4200D5104E /* Settings.bundle */; };
 		53C0649724ABCD4A00EC1F1E /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0649624ABCD4A00EC1F1E /* ButtonStyles.swift */; };
@@ -78,6 +80,7 @@
 		53418C9D24A400B600C0D43B /* UpliftingPhrases.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UpliftingPhrases.entitlements; sourceTree = "<group>"; };
 		53418CA424A4128D00C0D43B /* BannerImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerImageView.swift; sourceTree = "<group>"; };
 		53418CA724A4301400C0D43B /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
+		535E45B724AD7887008CDC2C /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		5385CAB224A97A4200D5104E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		53C0649624ABCD4A00EC1F1E /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		53D9EC6924ABE7F8003674C0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -161,6 +164,7 @@
 		53418C5F24A3FFCA00C0D43B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				535E45BB24AD7E2C008CDC2C /* Alerts */,
 				53C0649924ABCD5700EC1F1E /* Design */,
 				531C0CF324A96A8800F55CDE /* Resources */,
 				531C0CE924A91AC100F55CDE /* Observables */,
@@ -217,6 +221,14 @@
 				53418C8824A3FFCC00C0D43B /* Info.plist */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		535E45BB24AD7E2C008CDC2C /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				535E45B724AD7887008CDC2C /* Toast.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		53C0649924ABCD5700EC1F1E /* Design */ = {
@@ -390,6 +402,7 @@
 			files = (
 				531C0CEE24A966D100F55CDE /* HomeView.swift in Sources */,
 				531C0CFE24A9717500F55CDE /* FavouritesView.swift in Sources */,
+				535E45B824AD7887008CDC2C /* Toast.swift in Sources */,
 				53418CA824A4301400C0D43B /* AuthorView.swift in Sources */,
 				53C0649724ABCD4A00EC1F1E /* ButtonStyles.swift in Sources */,
 				53D9EC6A24ABE7F8003674C0 /* Theme.swift in Sources */,
@@ -407,6 +420,7 @@
 			files = (
 				531C0CEF24A966D100F55CDE /* HomeView.swift in Sources */,
 				531C0CFF24A9717500F55CDE /* FavouritesView.swift in Sources */,
+				535E45B924AD7887008CDC2C /* Toast.swift in Sources */,
 				53418CA924A4301400C0D43B /* AuthorView.swift in Sources */,
 				53C0649824ABCD4A00EC1F1E /* ButtonStyles.swift in Sources */,
 				53D9EC6B24ABE7F8003674C0 /* Theme.swift in Sources */,

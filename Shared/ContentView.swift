@@ -12,37 +12,45 @@ struct ContentView: View {
     @EnvironmentObject var theme: Theme
     
     @State var currentIndex: Int = 0
+    @State var showToast: Bool = false
     
     var body: some View {
-        return VStack {
-            BannerImageView()
-            
-            AuthorView(name: author())
-                .offset(y: -150)
-                .padding(.bottom, -130)
+        ZStack {
+            VStack {
+                BannerImageView()
+                
+                AuthorView(name: author())
+                    .offset(y: -150)
+                    .padding(.bottom, -130)
 
-            QuoteView(quote: quote())
-            
-            Spacer()
-            
-            HStack {
+                QuoteView(quote: quote())
+                
                 Spacer()
                 
-                Button("Inspire Me", action: next)
-                    .buttonStyle(InspireMeButtonStyle(theme: theme))
-                Spacer()
-                    
-            }
-        }
-        .navigationBarTitle("All Quotes", displayMode: .inline)
-        .navigationBarItems(trailing:
-            Button(action: love) {
                 HStack {
-                    Image(systemName: isLoved() ? "heart.fill" : "heart")
-                        .accentColor(theme.highlight)
+                    Spacer()
+                    
+                    Button("Inspire Me", action: next)
+                        .buttonStyle(InspireMeButtonStyle(theme: theme))
+                    Spacer()
+                        
                 }
             }
-        )
+            .navigationBarTitle("All Quotes", displayMode: .inline)
+            .navigationBarItems(trailing:
+                Button(action: love) {
+                    HStack {
+                        Image(systemName: isLoved() ? "heart.fill" : "heart")
+                            .accentColor(theme.highlight)
+                    }
+                }
+                
+            )
+        }
+        .toast(isShowing: $showToast, text: Text("You loved this quote"), icon: "heart")
+//        .animation(.spring())
+//        .blur(radius: shown ? 20 : 0)
+        
     }
     
     func author() -> String {
@@ -78,6 +86,10 @@ struct ContentView: View {
             model.list[self.currentIndex].favourite = false
         } else {
             model.list[self.currentIndex].favourite = true
+        }
+        
+        withAnimation {
+            self.showToast.toggle()
         }
     }
     
