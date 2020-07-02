@@ -15,8 +15,7 @@ struct UpliftingPhrasesApp: App {
     var body: some Scene {
         let model = QuotesModel()
         let theme = Theme()
-//        let x = requestNotificationAuthorization(model: model)
-        let _ = createDailyNotification(model: model)
+        let _ = requestNotificationAuthorization(model: model)
         
         return WindowGroup {
             HomeView()
@@ -28,7 +27,6 @@ struct UpliftingPhrasesApp: App {
     private func requestNotificationAuthorization(model: QuotesModel) -> Void {
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-            
             if error != nil {
                 print("Notifications denied")
             }

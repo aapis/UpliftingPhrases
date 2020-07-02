@@ -15,7 +15,17 @@ struct ContentView: View {
     @State var showToast: Bool = false
     
     var body: some View {
-        ZStack {
+        var popover: [String: Any] = [
+            "text": Text("You loved this quote"),
+            "icon": "heart"
+        ]
+        
+        if !isLoved() {
+            popover["text"] = Text("Removed from your favourites")
+            popover["icon"] = "heart.slash"
+        }
+        
+        return ZStack {
             VStack {
                 BannerImageView()
                 
@@ -47,7 +57,7 @@ struct ContentView: View {
                 
             )
         }
-        .toast(isShowing: $showToast, text: Text("You loved this quote"), icon: "heart")
+        .toast(isShowing: $showToast, text: popover["text"] as! Text, icon: popover["icon"] as! String)
 //        .animation(.spring())
 //        .blur(radius: shown ? 20 : 0)
         
