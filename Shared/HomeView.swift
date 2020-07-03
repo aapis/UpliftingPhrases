@@ -26,12 +26,13 @@ struct FeaturedQuoteView: View {
 struct ListView: View {
     @EnvironmentObject var model: QuotesModel
     @EnvironmentObject var theme: Theme
-//    @State var scheme: ColourScheme = ColourScheme()
+    
+    @State private var selectedView: Int? = 0
     
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: ContentView(), tag: 1, selection: self.$selectedView) {
                     HStack {
                         Image(systemName: "list.bullet")
                             .foregroundColor(theme.highlight)
@@ -41,7 +42,7 @@ struct ListView: View {
                     }
                 }
                 
-                NavigationLink(destination: FavouritesView()) {
+                NavigationLink(destination: FavouritesView(), tag: 2, selection: self.$selectedView) {
                     HStack {
                         Image(systemName: "heart")
                             .foregroundColor(theme.highlight)
@@ -53,6 +54,13 @@ struct ListView: View {
             }
             .listStyle(SidebarListStyle())
             .navigationBarTitle("Daily Inspiration")
+        }
+        .onAppear() {            
+            if DeviceHelper.isiPad() && DeviceHelper.isLandscape() {
+                self.selectedView = 1
+            } else {
+                self.selectedView = 0
+            }
         }
     }
 }

@@ -33,6 +33,7 @@
 		535E45B924AD7887008CDC2C /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535E45B724AD7887008CDC2C /* Toast.swift */; };
 		5385CAB324A97A4200D5104E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5385CAB224A97A4200D5104E /* Settings.bundle */; };
 		5385CAB424A97A4200D5104E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5385CAB224A97A4200D5104E /* Settings.bundle */; };
+		53A2A22924AEC92A0065ACF4 /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A2A22824AEC92A0065ACF4 /* DeviceHelper.swift */; };
 		53C0649724ABCD4A00EC1F1E /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0649624ABCD4A00EC1F1E /* ButtonStyles.swift */; };
 		53C0649824ABCD4A00EC1F1E /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C0649624ABCD4A00EC1F1E /* ButtonStyles.swift */; };
 		53D9EC6A24ABE7F8003674C0 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9EC6924ABE7F8003674C0 /* Theme.swift */; };
@@ -82,6 +83,7 @@
 		53418CA724A4301400C0D43B /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
 		535E45B724AD7887008CDC2C /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		5385CAB224A97A4200D5104E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		53A2A22824AEC92A0065ACF4 /* DeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
 		53C0649624ABCD4A00EC1F1E /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		53D9EC6924ABE7F8003674C0 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +166,7 @@
 		53418C5F24A3FFCA00C0D43B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				53A2A22724AEC91B0065ACF4 /* Helpers */,
 				535E45BB24AD7E2C008CDC2C /* Alerts */,
 				53C0649924ABCD5700EC1F1E /* Design */,
 				531C0CF324A96A8800F55CDE /* Resources */,
@@ -229,6 +232,14 @@
 				535E45B724AD7887008CDC2C /* Toast.swift */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		53A2A22724AEC91B0065ACF4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				53A2A22824AEC92A0065ACF4 /* DeviceHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		53C0649924ABCD5700EC1F1E /* Design */ = {
@@ -401,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				531C0CEE24A966D100F55CDE /* HomeView.swift in Sources */,
+				53A2A22924AEC92A0065ACF4 /* DeviceHelper.swift in Sources */,
 				531C0CFE24A9717500F55CDE /* FavouritesView.swift in Sources */,
 				535E45B824AD7887008CDC2C /* Toast.swift in Sources */,
 				53418CA824A4301400C0D43B /* AuthorView.swift in Sources */,
