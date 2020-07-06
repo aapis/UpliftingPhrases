@@ -26,13 +26,16 @@ struct UpliftingPhrasesApp: App {
     
     private func requestNotificationAuthorization(model: QuotesModel) -> Void {
         let center = UNUserNotificationCenter.current()
+        
         center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
             if error != nil {
                 print("Notifications denied")
             }
+            
+            if granted {
+                createDailyNotification(model: model)
+            }
         }
-        
-        createDailyNotification(model: model)
     }
     
     private func createDailyNotification(model: QuotesModel) -> Void {
