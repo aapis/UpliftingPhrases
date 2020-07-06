@@ -36,7 +36,7 @@ class Theme: ObservableObject {
         hour = calendar.component(.hour, from: date)
         
         if isMorning() {
-            gradient = LGradient(start: Color.blue, end: Color.pink).toArray()
+            gradient = LGradient(start: Color.pink, end: Color.blue).toArray()
             highlight = Color.pink
         }
         
@@ -59,10 +59,6 @@ class Theme: ObservableObject {
             gradient = LGradient(start: Color.purple, end: Color.black).toArray()
             highlight = Color.purple
         }
-    }
-    
-    func test() {
-        print("hello world")
     }
     
     func isMorning() -> Bool {
