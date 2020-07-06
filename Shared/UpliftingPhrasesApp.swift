@@ -47,7 +47,7 @@ struct UpliftingPhrasesApp: App {
         date.calendar = Calendar.current
         date.hour = 9
         
-        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: true)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
         let uuid = UUID().uuidString
         let request = UNNotificationRequest(identifier: uuid, content: content, trigger: trigger)
         
